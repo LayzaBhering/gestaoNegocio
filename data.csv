@@ -1,1 +1,6 @@
-
+Categoria,Produto,Un. Medida,Vendedor,Turno,Quantidade,Vlr. Unitário,Data Venda
+Bolo / Doce,Baunilha,UN,Horge,Matutino,4,12.0,2026-02-01
+Porção,Batata Frita,UN,George,Vespertino,12,7.5,2026-01-09
+Salada,Salada,UN,Lucas,Vespertino,120,28.9,2026-01-20
+Porção,Batata Frita,UN,Karine,Noturno,45,7.5,2026-01-28
+Bebida Alcoólica,Cerveja,LT,Lucas,Noturno,120,8.99,2026-01-20
