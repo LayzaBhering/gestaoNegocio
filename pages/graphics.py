@@ -35,4 +35,4 @@ if os.path.exists(arquivo) and os.path.getsize(arquivo) > 0:
     st.pyplot(fig2)
 
 else:
-    st.warning("Atenção: Sem dados para gerar gráficos. Registre as vendas no App!")
+    st.warning("Atenção: Sem dados para gerar gráficos. Registre as vendas no app!")

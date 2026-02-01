@@ -9,8 +9,9 @@ st.markdown("# Insira os dados")
 
 df = pd.DataFrame(
     [
-        {"Produto": "", 
-         "Categoria": "",
+        {
+        "Categoria": "",
+        "Produto": "", 
          "Un. Medida": "UN",
          "Vendedor": "",
          "Turno": "",
@@ -65,19 +66,30 @@ tabela = st.data_editor(
                 "Pizza",
                 "Molhos"
             ]
+        ),
+        "Turno": st.column_config.SelectboxColumn(
+            "Turno *",
+            help="Selecione o turno",
+            width="medium",
+            options=[
+                "Matutino",
+                "Vespertino",
+                "Noturno"
+            ]
         )
     }
 )
 
 #Configuração do botão de enviar dados adicionados na tabela. Em seeguida, o usuário é direcionado para a página data.py
 if st.button("Enviar", type="primary"):
-    bancoDadosTratado = tabela.dropna(subset=["Produto","Quantidade", "Categoria", "Data Venda", "Vlr. Unitário"])
+    bancoDadosTratado = tabela.dropna(subset=["Produto","Quantidade", "Categoria", "Data Venda", "Vlr. Unitário", "Turno"])
     bancoDados = bancoDadosTratado[
         (bancoDadosTratado["Produto"] != "") & 
         (bancoDadosTratado["Quantidade"] != "") &
         (bancoDadosTratado["Categoria"] != "") &
         (bancoDadosTratado["Data Venda"] != "") &
-        (bancoDadosTratado["Vlr. Unitário"] != "")
+        (bancoDadosTratado["Vlr. Unitário"] != "") &
+        (bancoDadosTratado["Turno"] !="")
     ]
     
     if not bancoDados.empty:
